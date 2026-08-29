@@ -4,7 +4,6 @@ class PrintNumbers {
             System.out.println(i);
         }
     }
-
     public static void main(String[] args) {
         PrintNumbers obj = new PrintNumbers();
         obj.printNumbersUpToN(5);
