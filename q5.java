@@ -27,6 +27,7 @@ class DayName {
         }
     }
 
+    
     public static void main(String[] args) {
         DayName obj = new DayName();
         obj.printDayName(3);
