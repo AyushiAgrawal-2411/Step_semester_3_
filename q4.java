@@ -10,7 +10,6 @@ class NaturalSum {
 
         System.out.println("Sum of numbers from 1 to " + n + " = " + sum);
     }
-
     public static void main(String[] args) {
         NaturalSum obj = new NaturalSum();
         obj.sumOfNaturalNumbers(5);
