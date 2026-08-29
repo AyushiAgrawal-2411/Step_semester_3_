@@ -8,7 +8,6 @@ class NumberClassifier {
             System.out.println("Zero");
         }
     }
-
     public static void main(String[] args) {
         NumberClassifier obj = new NumberClassifier();
         obj.classifyNumber(15);
