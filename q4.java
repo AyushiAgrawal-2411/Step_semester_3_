@@ -1,17 +1,50 @@
-class NaturalSum {
-    void sumOfNaturalNumbers(int n) {
-        int i = 1;
+public class q4 {
+
+    private static double rowAverage(int[] row) {
+
         int sum = 0;
 
-        while (i <= n) {
-            sum = sum + i;
-            i++;
+        for (int i = 0; i < row.length; i++) {
+            sum += row[i];
         }
 
-        System.out.println("Sum of numbers from 1 to " + n + " = " + sum);
+        return (double) sum / row.length;
     }
+
+    static String classifyMatches(int[][] runsPerOver, int threshold) {
+
+        String result = "";
+
+        for (int i = 0; i < runsPerOver.length; i++) {
+
+            double average = rowAverage(runsPerOver[i]);
+
+            if (average >= threshold) {
+                result += "Match " + i + ": Power Surge";
+            } else {
+                result += "Match " + i + ": Normal";
+            }
+
+            if (i < runsPerOver.length - 1) {
+                result += " | ";
+            }
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
-        NaturalSum obj = new NaturalSum();
-        obj.sumOfNaturalNumbers(5);
+
+        int[][] runsPerOver = {
+                {4, 6, 8},
+                {10, 12, 14},
+                {2, 3, 1}
+        };
+
+        int threshold = 8;
+
+        System.out.println(
+                classifyMatches(runsPerOver, threshold)
+        );
     }
 }

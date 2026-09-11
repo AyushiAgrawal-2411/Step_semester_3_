@@ -1,15 +1,26 @@
-class NumberClassifier {
-    void classifyNumber(int number) {
-        if (number > 0) {
-            System.out.println("Positive");
-        } else if (number < 0) {
-            System.out.println("Negative");
-        } else {
-            System.out.println("Zero");
+public class q2 {
+
+    static String findDuplicatePick(String[] playerNames) {
+
+        for (int i = 0; i < playerNames.length; i++) {
+
+            for (int j = i + 1; j < playerNames.length; j++) {
+
+                if (playerNames[i].equals(playerNames[j])) {
+                    return "Duplicate Found: " + playerNames[i];
+                }
+            }
         }
+
+        return "No Duplicates Found";
     }
+
     public static void main(String[] args) {
-        NumberClassifier obj = new NumberClassifier();
-        obj.classifyNumber(15);
+
+        String[] players = {
+                "Kohli", "Bumrah", "Kohli", "Rohit"
+        };
+
+        System.out.println(findDuplicatePick(players));
     }
 }

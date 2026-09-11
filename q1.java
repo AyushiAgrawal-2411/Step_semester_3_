@@ -1,14 +1,24 @@
-class VotingEligibility {
-    
-    void checkVotingEligibility(int age) {
-        if (age >= 18) {
-            System.out.println("Eligible to vote");
-        } else {
-            System.out.println("Not eligible to vote");
-        }
+import java.util.Arrays;
+
+public class q1 {
+
+    static void applyMultipliers(double[] playerScores,
+                                 int captainIndex,
+                                 int viceCaptainIndex) {
+
+        playerScores[captainIndex] =
+                playerScores[captainIndex] * 2;
+
+        playerScores[viceCaptainIndex] =
+                playerScores[viceCaptainIndex] * 1.5;
     }
+
     public static void main(String[] args) {
-        VotingEligibility obj = new VotingEligibility();
-        obj.checkVotingEligibility(20);
+
+        double[] scores = {40, 55, 30, 62};
+
+        applyMultipliers(scores, 1, 3);
+
+        System.out.println(Arrays.toString(scores));
     }
 }
